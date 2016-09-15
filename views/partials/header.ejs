@@ -1,0 +1,16 @@
+<nav class="navbar navbar-fixed-top">
+
+	<div class="content-padding">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="/">Home</a></li>
+			<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies <i class="fa fa-chevron-down"></i></a>
+				<ul class="dropdown-menu">
+					<% for(var i = 0;i < data.length; i++) { %>
+					<li><a href="/inspirasibaduy/show/<%=data[i].episode_number%>" class="episode_link"><%= data[i].title %></a></li>
+					<% } %>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+</nav>
