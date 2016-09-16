@@ -7,7 +7,7 @@ exports.list = function(req, res){
 
   req.getConnection(function(err,connection){
        
-        var query = connection.query('SELECT * FROM customer',function(err,rows)
+        var query = connection.query('SELECT * FROM t_artikel',function(err,rows)
         {
             
             if(err)

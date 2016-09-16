@@ -16,7 +16,7 @@ var connection  = require('express-myconnection');
 var mysql = require('mysql');
 
 // all environments
-app.set('port', process.env.PORT || 3001);
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 //app.use(express.favicon());
@@ -28,10 +28,9 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
-
+var server = app.listen(9000, function() {
+  console.log('Server listening on port ' + server.address().port);
+});
 /*------------------------------------------
     connection peer, register as middleware
     type koneksi : single,pool and request 

@@ -4,20 +4,68 @@
      <% include customers/head1.ejs %>
   </head>
   <body>
-
- 
   <% include customers/header1.ejs %>
     <div id="hero-image">
        <h1 id="hero-title">Selamat datang di menu admin!</h1>
     </div>
-
-    
-   
+    </br>
+    </br>
+<form>
+     <table align="center" id="example">
+          <thead>
+                <tr>
+                    <th width="50px">No</th>
+                    <th>TITLE</th>
+                    <th>USER</th>
+                    <th>DESKRIPSI</th>
+                    <th>POSTER</th>
+                    <th>BACKGROUND</th>
+                    <th width="120px">Action</th>
+                </tr>
+          </thead>
+          <tbody>           
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].title%></td>
+                    <td><%=data[i].main_characters%></td>
+                    <td><%=data[i].description%></td>
+                    <td><%=data[i].poster%></td>
+                    <td><%=data[i].hero_image%></td>
+                    <td>
+                        <a class="a-inside edit" href="../customers/edit/<%=data[i].episode_number%>">Edit</a>
+                       
+                        <a class="a-inside delete" href="../customers/delete/<%=data[i].episode_number%>">Delete</a>
+                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+                
+                              
+                </tbody>
+            </table>
+          </form>
 
     <% include customers/footer1.ejs %>
+
     <% include customers/scripts1.ejs %>
-  </body>
+
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+    </script>
+    <script>
+    $(function(){
+    $("#example").dataTable();
+    })
+    </script>
+</body>
 </html>
-
-
-

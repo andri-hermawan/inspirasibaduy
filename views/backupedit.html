@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-     <% include customers/head1.ejs %>
-  </head>
-  <body>
-  <% include customers/header1.ejs %>
-    <div id="hero-image">
-       <h1 id="hero-title">Selamat datang di menu admin!</h1>
-    </div>
-    </br>
-    </br>
+<%- include layouts/header.ejs %>
 
-    <div class="page-data">
+        <div class="page-data">
             
             <form method="post" action="/customers/edit/<%=data[0].id%>">
                 <table cellpadding="11">
@@ -41,17 +30,5 @@
             </form>
             
         </div>
-
-    <% include customers/footer1.ejs %>
-
-    <% include customers/scripts1.ejs %>
-
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
-    </script>
-    $(function(){
-    $("#example").dataTable();
-    })
-    </script>
-</body>
-</html>
+        
+<%- include layouts/footer.ejs %>
