@@ -16,7 +16,7 @@ var connection  = require('express-myconnection');
 var mysql = require('mysql');
 
 // all environments
-app.set('port', process.env.PORT || 4300);
+app.set('port', process.env.PORT || 3001);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 //app.use(express.favicon());
@@ -52,10 +52,12 @@ app.use(
 );
 
 
-
+//halaman User
 app.get('/', routes.home);
 app.get('/inspirasibaduy/show/:episode_number?', routes.single_page); 
-app.get('*', routes.notFound);
+
+//Halaman Admin
+
 
 app.get('/customers', customers.list);
 app.get('/customers/add', customers.add);

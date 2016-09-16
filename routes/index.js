@@ -45,8 +45,3 @@ exports.single_page = function(req, res){
          //console.log(query.sql);
     }); 
 };
-
-exports.notFound =  function(req, res){
-    res.send('Anda tidak di izinkan untuk melihat halaman ini');
-};
-
